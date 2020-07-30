@@ -31,13 +31,10 @@ function draw() {
 		stroke(255, 255, 255, map(21 - l, 0, 21, 0, 21));
 		circle(0, 0, sun.diameter + l * 30 - 14);
 	}
+
 	for(let i = 0; i < planets.length; i++) {
 		noStroke();
 		planets[i].show();
 		planets[i].orbit();
-
-
-
 	}
-	// noLoop();
 }

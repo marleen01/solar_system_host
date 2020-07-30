@@ -20,6 +20,7 @@ class Planet {
       rotate(-HALF_PI);
       rect(-this.diameter / 2, 0, this.diameter, 400);
     }
+
     fill(255);
     point(0, 0);
     ellipse(0, 0, this.diameter);
