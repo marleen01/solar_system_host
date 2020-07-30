@@ -12,19 +12,26 @@ class Planet {
   }
 
   show() {
-    push();
-    rotate(this.angle);
-    translate(this.distance, 0);
     if (this.t === "planet") {
+      push();
+      rotate(this.angle);
+      translate(this.distance, 0);
       fill(0, 0, 0, 150);
       rotate(-HALF_PI);
       rect(-this.diameter / 2, 0, this.diameter, 400);
+      fill(255);
+      point(0, 0);
+      ellipse(0, 0, this.diameter);
+      pop();
+    }
+    if (this.t === "star") {
+      push();
+      fill(255);
+      point(0, 0);
+      ellipse(0, 0, this.diameter);
+      pop();
     }
 
-    fill(255);
-    point(0, 0);
-    ellipse(0, 0, this.diameter);
-    pop();
 
   }
 }
