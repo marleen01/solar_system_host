@@ -2,13 +2,24 @@ class Planet {
   constructor(diameter, distance, orbitspeed, angle, t = "planet") {
     this.diameter = diameter;
     this.distance = distance;
-    this.orbitspeed = orbitspeed;
+    this.orbitspeed = orbitspeed * orb;
+    console.log(this.orbitspeed);
     this.angle = angle;
     this.t = t;
+    this.history = [];
   }
 
   orbit() {
-    this.angle += this.orbitspeed;
+    this.angle -= this.orbitspeed;
+  }
+
+  showtrail() {
+    push();
+    stroke(255, 255, 255, 100);
+    strokeWeight(1);
+    noFill();
+    circle(0, 0, this.distance * 2);
+    pop();
   }
 
   show() {
@@ -31,7 +42,6 @@ class Planet {
       ellipse(0, 0, this.diameter);
       pop();
     }
-
-
   }
+
 }
